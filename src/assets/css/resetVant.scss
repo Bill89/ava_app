@@ -1,0 +1,27 @@
+// 重置vant ui
+.van-button--default {
+  border: none;
+}
+.van-icon,
+.van-icon::before {
+  vertical-align: text-top;
+}
+
+.van-search__content {
+  background-color: #e8e8e8;
+}
+// grid 字体
+.van-grid-item__text {
+  color: inherit;
+}
+.van-grid-item__content {
+  padding: 10px;
+}
+// 疑问号
+.van-icon-question-o:before {
+  color: #256ef6;
+}
+// 必填项的icon *
+.van-cell--required::before {
+  left: 1rem;
+}
