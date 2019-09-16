@@ -1,6 +1,6 @@
 # app
 
-[预览地址](https://bill89.github.io/Ava-app/dist)
+[预览地址](https://bill89.github.io/ava_app/dist)
 
 ## Project setup
 
