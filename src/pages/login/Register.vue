@@ -94,7 +94,7 @@ export default {
       }
       this.http.post(this.api.register, param).then(res => {
         // 保存用户信息后登录
-        this.$store.commit('SET_USER_INFO', res)
+        this.common.saveLoginData(res)
         this.router.replace('Index')
       })
     }

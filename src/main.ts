@@ -9,10 +9,10 @@ import avaRouter from '@/router/index'
 import router from '@/router/router'
 import CommonUi from '@/components/CommonUi'
 import consts from '@/assets/js/consts'
-import common from '@/assets/js/common'
 import utils from '@/assets/js/tool/utils'
 import { api } from '@/assets/js/api/apiType'
 import http from '@/assets/js/api/http'
+import common from '@/assets/js/common'
 // 全局引入
 import './registerServiceWorker'
 import './assets/css/basic.scss'
@@ -26,10 +26,10 @@ avaRouter.init && avaRouter.init(router)
 
 Vue.prototype.router = avaRouter
 Vue.prototype.CONSTS = consts.CONSTS
-Vue.prototype.common = common
 Vue.prototype.utils = utils
 Vue.prototype.api = api
 Vue.prototype.http = http
+Vue.prototype.common = common
 Vue.prototype.transitionTime = 200 // 页面过渡时间
 
 Vue.config.productionTip = false

@@ -166,10 +166,11 @@ export default {
         .catch(() => {})
     },
     clearData() {
-      this.common.isLogin(false)
-      this.common.setSesVal('resume_flag', '')
-      this.common.setLocVal('safe_out', 'true')
+      // this.common.isLogin(false)
+      // this.common.setSesVal('resume_flag', '')
+      // this.common.setLocVal('safe_out', 'true')
       // this.$store.dispatch('updateAuthFlow', { authName: '登录/注册' })
+      this.common.clearLocVal()
       this.router.replace('Login')
       // this.$store.commit('SET_MYINTEGRAL_SCORE', {
       //   key: 'activescore',

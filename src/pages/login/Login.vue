@@ -1,6 +1,6 @@
 <template>
-  <ChildLayout title="登录">
-    <!-- <header class="bcblue tc f18 h44 lh44 white">登录</header> -->
+  <div>
+    <header class="bcblue tc f18 h44 lh44 white">登录</header>
     <van-cell-group>
       <van-field
         v-model.trim="userInfo.account"
@@ -26,7 +26,7 @@
     <div class="plr16">
       <van-button plain type="primary" size="large" @click="goRegister">注册》</van-button>
     </div>
-  </ChildLayout>
+  </div>
 </template>
 <script>
 import validate from '@/assets/js/tool/validate'
@@ -61,7 +61,8 @@ export default {
       }
       this.http.post(this.api.login, param).then(res => {
         // 保存用户数据后进入
-        this.$store.commit('SET_USER_INFO', res)
+        // this.$store.commit('SET_USER_INFO', res)
+        this.common.saveLoginData(res)
         this.router.replace('Index')
       })
     },

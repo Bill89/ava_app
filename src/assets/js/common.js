@@ -1,12 +1,22 @@
 // import nodeCryptoJs from 'node-cryptojs-aes'
 import store from '@/store'
+import avaRouter from '@/router'
 export default {
+  /**
+   * 保存登录后的数据
+   * @param {Object} data
+   */
+  saveLoginData(data = {}) {
+    this.setLocVal('userInfo', data)
+    store.commit('SET_USER_INFO', data)
+  },
   /**
    * 设置本地缓存
    * @param namespace
    * @param value
    */
   setLocVal(namespace, value) {
+    if (typeof value === 'object') value = JSON.stringify(value)
     if (namespace.indexOf('.') > -1) {
       let _arr = namespace.split('.')
       let copy = {}
@@ -41,26 +51,20 @@ export default {
     let _arr = namespace.split('.')
     let _len = _arr.length
     let data = window.localStorage[_arr[0]]
-    if (_len === 1) {
-      return data || ''
-    }
-    if (!data) {
-      return ''
-    } else {
-      data = JSON.parse(data)
-    }
+    const vars = 'null|undefined|true|false'.split('|')
+    if (!data) return data
+    if (vars.includes(data)) return JSON.parse(data)
+
+    const firstStr = data.substr(0, 1)
+    data = (firstStr === '[' || firstStr === '{') && JSON.parse(data)
+
     for (let i = 1; i < _len; i++) {
       data = data[_arr[i]]
       if (!data) {
         return ''
       }
     }
-    if (typeof data === 'string') {
-      // 保证返回的都是字符串
-      return data
-    } else {
-      return JSON.stringify(data)
-    }
+    return data
   },
   /**
    * 清除缓存
@@ -215,6 +219,10 @@ export default {
   createReqtoken(reqrandom) {
     return this.Encrypt(reqrandom, 'tkeynfjj08282016')
   },
+  getToken() {
+    const userInfo = this.getLocVal('userInfo')
+    return userInfo && userInfo.token
+  },
   /**
    * 是否登录标识
    * @param flag: boolean
@@ -229,6 +237,14 @@ export default {
     } else {
       return this.getSesVal('isLogin') === true
     }
+  },
+  /**
+   * 是否登录标识,未登陆强制调转到登陆页面
+   */
+  isUserLogin() {
+    const a = this.getToken()
+    !a && avaRouter.replace('Login')
+    return a
   },
   /**
    * 获取解密后sessionkey快捷方法

@@ -37,9 +37,15 @@ export default {
       this.init()
     }
   },
+  mounted() {
+    this.init()
+  },
   methods: {
     init() {
-      console.log(this.currentTab)
+      if (this.common.isUserLogin()) {
+        const data = this.common.getLocVal('userInfo')
+        this.$store.commit('SET_USER_INFO', data)
+      }
     }
   }
 }

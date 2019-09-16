@@ -174,7 +174,7 @@ function updateStore(functionNo) {
 }
 /**
  * 保存为本地数据
- * @param key 功能号
+ * @param key 名称
  * @param data 数据
  */
 var setLocalData = (key, data) => {
@@ -193,8 +193,8 @@ function saveResponseData(res) {
         // json
         formatData = JSON.parse(res.config.data)
       }
-      if (isIncludeMutation(formatData.function) || cacheFunctionNos.indexOf(formatData.function) !== -1) {
-        localCache.setData(formatData.function, res.data)
+      if (isIncludeMutation(formatData.url) || cacheFunctionNos.indexOf(formatData.url) !== -1) {
+        localCache.setData(formatData.url, res.data)
       }
     } catch (e) {
       console.error(e)
