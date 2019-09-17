@@ -40,10 +40,8 @@ export default Vue.extend({
   },
   methods: {
     onClick() {
-      this.data.routeName && this.avarouter.go(this.data.routeName)
-    },
-    countDownS_cb() {},
-    countDownE_cb() {}
+      this.data.routeName && Vue.prototype.avarouter.go(this.data.routeName)
+    }
   }
 })
 </script>
