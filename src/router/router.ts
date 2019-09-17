@@ -34,6 +34,12 @@ export default new Router({
       meta: { name: '登录' },
       component: () => import(/* webpackChunkName: "Login" */ '@/pages/login/Login')
     },
+    {
+      path: '/happyZodiac',
+      name: 'HappyZodiac',
+      meta: { name: 'HappyZodiac' },
+      component: () => import(/* webpackChunkName: "Login" */ '@/pages/game/HappyZodiac')
+    },
     // {
     //   path: '/assets',
     //   name: 'AssetsPage',

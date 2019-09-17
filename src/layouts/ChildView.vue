@@ -154,7 +154,7 @@ export default {
       } else {
         this.transitionName = 'slide-left'
       }
-      this.router.setCurrentPageName(to.name)
+      this.avarouter.setCurrentPageName(to.name)
       const includecomponents = this.includecomponents
       this.isBack = this.$router.isBack
       this.isClickJump = this.$router.isClickJump

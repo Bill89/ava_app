@@ -1,4 +1,4 @@
-// import nodeCryptoJs from 'node-cryptojs-aes'
+import nodeCryptoJs from 'node-cryptojs-aes'
 import store from '@/store'
 import avaRouter from '@/router'
 export default {
@@ -158,6 +158,16 @@ export default {
     } else {
       sessionStorage.clear()
     }
+  },
+  /**
+   * 用于银行卡去除空格
+   * @param val: String
+   */
+  rem_bla: function(val) {
+    if (!val) {
+      return ''
+    }
+    return val.replace(/\s/g, '')
   },
   /**
    * 数据加密

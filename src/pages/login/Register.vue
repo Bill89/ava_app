@@ -95,7 +95,7 @@ export default {
       this.http.post(this.api.register, param).then(res => {
         // 保存用户信息后登录
         this.common.saveLoginData(res)
-        this.router.replace('Index')
+        this.avarouter.replace('Index')
       })
     }
   }

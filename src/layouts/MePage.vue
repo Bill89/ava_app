@@ -171,7 +171,7 @@ export default {
       // this.common.setLocVal('safe_out', 'true')
       // this.$store.dispatch('updateAuthFlow', { authName: '登录/注册' })
       this.common.clearLocVal()
-      this.router.replace('Login')
+      this.avarouter.replace('Login')
       // this.$store.commit('SET_MYINTEGRAL_SCORE', {
       //   key: 'activescore',
       //   value: ''

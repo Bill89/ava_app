@@ -24,7 +24,7 @@ Vue.use(CommonUi)
 
 avaRouter.init && avaRouter.init(router)
 
-Vue.prototype.router = avaRouter
+Vue.prototype.avarouter = avaRouter
 Vue.prototype.CONSTS = consts.CONSTS
 Vue.prototype.utils = utils
 Vue.prototype.api = api

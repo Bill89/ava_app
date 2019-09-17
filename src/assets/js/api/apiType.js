@@ -1,7 +1,9 @@
 export const api = {
   register: 'mycontroller/register', // 注册
   login: 'mycontroller/login', // 登录
-  userInfo: 'mycontroller/userInfo' // 用户信息
+  userInfo: 'mycontroller/userInfo', // 用户信息
+  lotteryList: '/api/lottery/betList', // 彩票列表
+  bet: '/api/lottery/bet' // 彩票下注
 }
 
 // 提交修改类的api需要添加到blockApi

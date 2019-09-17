@@ -63,12 +63,12 @@ export default {
         // 保存用户数据后进入
         // this.$store.commit('SET_USER_INFO', res)
         this.common.saveLoginData(res)
-        this.router.replace('Index')
+        this.avarouter.replace('Index')
       })
     },
     // 注册
     goRegister() {
-      this.router.go('Register')
+      this.avarouter.go('Register')
     }
   }
 }

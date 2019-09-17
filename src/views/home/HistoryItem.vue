@@ -1,5 +1,5 @@
 <template>
-  <div class="HistoryItem bcfff w100 h150 tc br3">
+  <div class="HistoryItem bcfff w100 h150 tc br3" @click="onClick">
     <img class="gameLogo mt10" v-lazy="data.url" />
     <p>{{ data.gameName }}</p>
     <!-- <p class="red">{{ dateTime }}</p> -->
@@ -39,6 +39,9 @@ export default Vue.extend({
     }
   },
   methods: {
+    onClick() {
+      this.data.routeName && this.avarouter.go(this.data.routeName)
+    },
     countDownS_cb() {},
     countDownE_cb() {}
   }

@@ -42,10 +42,10 @@ export default {
   },
   methods: {
     init() {
-      if (this.common.isUserLogin()) {
-        const data = this.common.getLocVal('userInfo')
-        this.$store.commit('SET_USER_INFO', data)
-      }
+      // if (this.common.isUserLogin()) {
+      //   const data = this.common.getLocVal('userInfo')
+      //   this.$store.commit('SET_USER_INFO', data)
+      // }
     }
   }
 }

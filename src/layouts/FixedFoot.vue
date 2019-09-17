@@ -112,7 +112,7 @@ export default {
     onClickMenu(menu) {
       if (this.attentionState !== -1 && menu.indexOf('关注') !== -1) {
         if (!this.common.isLogin()) {
-          this.nfrouter.go('LoginPage')
+          this.avarouter.go('LoginPage')
           return false
         }
         if (!this.canClickAttention) return false
@@ -144,7 +144,7 @@ export default {
         case '取现':
         case '智能取现':
           if (!this.common.certificationNotice({ isWeakUser: 0 })) {
-            this.nfrouter.go('EnchashmentPage', this.detailInfo)
+            this.avarouter.go('EnchashmentPage', this.detailInfo)
           }
           break
         case '工资理财':
@@ -155,20 +155,20 @@ export default {
         case '充值':
         case '智能充值':
           if (!this.common.certificationNotice({ isWeakUser: 0 })) {
-            this.nfrouter.go('RechargePage', this.detailInfo)
+            this.avarouter.go('RechargePage', this.detailInfo)
           }
           break
         case '定投':
           if (!this.common.certificationNotice({ isWeakUser: 0 })) {
             if (this.detailInfo.pensionFlag) {
               // 养老宝的定投
-              this.nfrouter.go('CombInvestmentPage', {
+              this.avarouter.go('CombInvestmentPage', {
                 planType: 'add',
                 combDetail: this.detailInfo,
                 pensionFlag: this.detailInfo.pensionFlag
               })
             } else {
-              this.nfrouter.go('InvestmentPage', {
+              this.avarouter.go('InvestmentPage', {
                 fundDetail: this.detailInfo,
                 planType: 'add'
               })
@@ -176,17 +176,21 @@ export default {
           }
           break
         case '查看交易确认信息':
-          this.nfrouter.go('TradeConfirm')
+          this.avarouter.go('TradeConfirm')
           break
         case '购买':
           if (!this.common.certificationNotice({ isWeakUser: 0 })) {
             if (this.detailInfo.fundtype === '2') {
-              this.nfrouter.go('RechargePage', this.detailInfo)
+              this.avarouter.go('RechargePage', this.detailInfo)
             } else {
               if (this.detailInfo.combcode) {
-                this.nfrouter.go('BuyCombPage', { combDetail: this.detailInfo })
+                this.avarouter.go('BuyCombPage', {
+                  combDetail: this.detailInfo
+                })
               } else {
-                this.nfrouter.go('BuyFundPage', { fundDetail: this.detailInfo })
+                this.avarouter.go('BuyFundPage', {
+                  fundDetail: this.detailInfo
+                })
               }
             }
           }
@@ -197,16 +201,16 @@ export default {
     },
     goFinancial() {
       if (this.detailInfo && this.detailInfo.isGoFinancialPlan) {
-        this.nfrouter.go('FinancialPlan', { planType: 'add' })
+        this.avarouter.go('FinancialPlan', { planType: 'add' })
         return
       }
       this.httpFetch
         .post(this.apiType.FINANCIAL_PLAN_PAGE)
         .then(res => {
           if (res && res.returnlist.length) {
-            this.nfrouter.go('FinancialPondPage', { res: res })
+            this.avarouter.go('FinancialPondPage', { res: res })
           } else {
-            this.nfrouter.go('FinancialPlan', { planType: 'add' })
+            this.avarouter.go('FinancialPlan', { planType: 'add' })
           }
         })
         .catch(err => {

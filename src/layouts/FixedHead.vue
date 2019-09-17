@@ -114,7 +114,7 @@ export default {
         this.$bus.emit('customBack')
         return
       }
-      this.router.goBack()
+      this.avarouter.goBack()
     },
     jump(icon) {
       this.$emit('triggerHander', icon)
@@ -123,7 +123,7 @@ export default {
           // new ShareModel(this.targetObj).doShare()
           break
         case 'search':
-          this.nfrouter.go('Search')
+          this.avarouter.go('Search')
           break
         case 'service':
           let pvalue = this.headerTitle
@@ -138,7 +138,7 @@ export default {
           break
         case 'question':
           // 开户实名认证  RealNameAuthentication
-          this.nfrouter.go('AuthenticationPrivileges')
+          this.avarouter.go('AuthenticationPrivileges')
           break
         case 'question-btn':
           this.nfDialog
