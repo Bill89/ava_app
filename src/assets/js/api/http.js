@@ -89,7 +89,7 @@ httpFetch.nfpost = (url, data = {}, isNeedCache = false) => {
       .catch(err => {
         // store.commit('HIDE_LOADING', url)
         console.log('请求异常信息：' + err)
-        reject({}) // 返回空的对象，前端需要知道请求结束
+        reject(err) // 返回空的对象，前端需要知道请求结束
       })
   })
 }

@@ -22,7 +22,8 @@ export default {
   },
   data() {
     return {
-      selectedValues: ''
+      selectedValues: '',
+      areaName: ['wan', 'qian', 'bai', 'shi', 'ge']
     }
   },
   watch: {
@@ -40,11 +41,15 @@ export default {
   },
   methods: {
     onBuy() {
-      const param = Object.values(this.selectedNum).map((v, i) => ({
-        area: i,
+      const param = {
+        wan: this.selectedNum[0],
+        qian: this.selectedNum[1],
+        bai: this.selectedNum[2],
+        shi: this.selectedNum[3],
+        ge: this.selectedNum[4],
         bet: '1',
-        number: v
-      }))
+        lotteryId: 1
+      }
       this.http
         .post(this.api.bet, param)
         .then(res => {

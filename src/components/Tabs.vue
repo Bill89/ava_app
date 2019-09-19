@@ -1,22 +1,22 @@
 <template>
   <tabs
     :class="{'nf-fund-style': nfFund}"
-    :active="active"
+    v-model="active"
     :sticky="sticky"
     :lineWidth="lineWidth"
     :swipeable="swipeable"
     :swipeThreshold="swipeThreshold"
     :type="type"
     :duration="duration"
-    @click="onClick"
+    @change="onChange"
     @disabled="clickHandleDisabled"
   >
     <tab v-for="(item, i) in newTitles" :key="i" :title="item.title" :disabled="!!item.disabled">
       <template v-if="noCache ? active === i : alreadyClick.includes(i)">
         <slot :name="`head${i+1}`"></slot>
-        <nf-pull-refresh v-if="!customScroll" :ref="`slot${i+1}`">
+        <VScroll v-if="!customScroll" :ref="`slot${i+1}`">
           <slot :name="`slot${i+1}`"></slot>
-        </nf-pull-refresh>
+        </VScroll>
         <template v-else>
           <slot :name="`slot${i+1}`"></slot>
         </template>
@@ -105,7 +105,7 @@ export default {
     }
   },
   methods: {
-    onClick(index, title) {
+    onChange(index, title) {
       if (!this.customClick) {
         this.active = index
         !this.alreadyClick.includes(index) && this.alreadyClick.push(index)
@@ -120,7 +120,8 @@ export default {
 }
 </script>
 <style>
+/* 消除顶部边框 */
 .van-tabs__wrap.van-hairline--top-bottom::after {
-  border-width: 0 0 1px 0;
+  /* border-width: 0 0 1px 0; */
 }
 </style>

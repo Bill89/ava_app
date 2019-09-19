@@ -1,45 +1,43 @@
 <template>
-  <ChildLayout title="欢乐生肖">
-    <header class="f-box bcfff p16">
+  <ChildLayout title="欢乐生肖" customScroll class="HappyZodiac">
+    <header class="f-box bcfff p16 h50">
       <div class="wb50">
         倒计时间
         <countdown class="red" :endDate="endTime"></countdown>
       </div>
       <div class="wb50">第20190920-009期</div>
     </header>
-    <van-tabs v-model="tabName" animated swipeable>
-      <van-tab title="彩种" name="kind">
-        <section class="bcfff m10" v-for="(item, i) in list" :key="i">
-          <div class="fb-between bb p8">
-            <span>{{ item.areaName }}</span>
-            <div>
-              <van-button round size="mini">大</van-button>
-              <van-button round size="mini">小</van-button>
-              <van-button round size="mini">全</van-button>
-              <van-button round size="mini">奇</van-button>
-              <van-button round size="mini">偶</van-button>
-              <van-button round size="mini">清</van-button>
-            </div>
+    <AvaTabs class="ava-tabs" v-model="active" :titles="titles" animated swipeable>
+      <section class="bcfff m10" v-for="(item, i) in list" :key="i" slot="slot1">
+        <div class="fb-between bb p8">
+          <span>{{ item.areaName }}</span>
+          <div>
+            <van-button round size="mini">大</van-button>
+            <van-button round size="mini">小</van-button>
+            <van-button round size="mini">全</van-button>
+            <van-button round size="mini">奇</van-button>
+            <van-button round size="mini">偶</van-button>
+            <van-button round size="mini">清</van-button>
           </div>
-          <div class="mt8 p8">
-            <van-button
-              round
-              plain
-              hairline
-              size="mini"
-              type="info"
-              v-for="(n, index) in numbs.split('')"
-              :key="index"
-              @click="onNumb(i, n)"
-            >{{ n }}</van-button>
-          </div>
-        </section>
-        <KindFooter :selectedNum="selectedNum"></KindFooter>
-      </van-tab>
-      <van-tab title="走势" name="trend">
-        <section class="h400 bcfff">走势2222222222222222</section>
-      </van-tab>
-    </van-tabs>
+        </div>
+        <div class="mt8 p8">
+          <van-button
+            round
+            plain
+            hairline
+            size="mini"
+            type="info"
+            v-for="(n, index) in numbs.split('')"
+            :key="index"
+            @click="onNumb(i, n)"
+          >{{ n }}</van-button>
+        </div>
+      </section>
+      <section slot="slot2" class="h400 bcfff">
+        <div>走势2222222222222222</div>
+      </section>
+    </AvaTabs>
+    <KindFooter :selectedNum="selectedNum" slot="footer" v-if="!active" class="mlr10 mb10"></KindFooter>
   </ChildLayout>
 </template>
 <script>
@@ -51,6 +49,8 @@ export default {
   },
   data() {
     return {
+      active: 0,
+      titles: ['彩票', '走势'],
       endTime: Date.now() + 100000,
       tabName: 'kind',
       list: [
@@ -93,3 +93,8 @@ export default {
   }
 }
 </script>
+<style scoped>
+.HappyZodiac .ava-tabs {
+  height: calc(100% - 82px);
+}
+</style>
