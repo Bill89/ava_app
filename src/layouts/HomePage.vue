@@ -82,7 +82,8 @@ export default {
         {
           gameName: '欢乐生肖',
           url:
-            'http://www.meinv.hk/wp-content/themes/Grace/timthumb.php?src=http://www.meinv.hk/wp-content/uploads/2016/02/2019021316082568-e1550045363119.jpg&h=300&w=750&zc=1'
+            'http://www.meinv.hk/wp-content/themes/Grace/timthumb.php?src=http://www.meinv.hk/wp-content/uploads/2016/02/2019021316082568-e1550045363119.jpg&h=300&w=750&zc=1',
+          routeName: 'HappyZodiac'
         },
         {
           gameName: '分分彩',
