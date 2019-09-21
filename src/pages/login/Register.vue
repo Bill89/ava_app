@@ -1,7 +1,5 @@
 <template>
   <child-layout title="注册">
-    <!-- <div> -->
-    <!-- <header class="bcblue tc f18 h44 lh44 white">注册</header> -->
     <van-cell-group>
       <van-field
         v-model.trim="userInfo.registrationCode"
@@ -43,9 +41,6 @@
     <div class="p16">
       <van-button type="primary" size="large" @click="onRegister">注册</van-button>
     </div>
-    <!-- <div class="p16">
-      <van-button plain type="primary" size="large" @click="router.goBack()">已有账号登录》</van-button>
-    </div>-->
   </child-layout>
 </template>
 <script>
@@ -101,5 +96,3 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
-</style>

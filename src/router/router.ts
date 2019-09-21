@@ -37,8 +37,14 @@ export default new Router({
     {
       path: '/happyZodiac',
       name: 'HappyZodiac',
-      meta: { name: 'HappyZodiac' },
-      component: () => import(/* webpackChunkName: "Login" */ '@/pages/game/HappyZodiac')
+      meta: { name: '欢乐生肖' },
+      component: () => import(/* webpackChunkName: "HappyZodiac" */ '@/pages/game/HappyZodiac')
+    },
+    {
+      path: '/changeLoginPassword',
+      name: 'ChangeLoginPassword',
+      meta: { name: '修改登录密码' },
+      component: () => import(/* webpackChunkName: "ChangeLoginPassword" */ '@/pages/me/ChangeLoginPassword')
     },
     // {
     //   path: '/assets',

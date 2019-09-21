@@ -16,7 +16,6 @@
               v-for="(item, i) in moneyBtns"
               :key="i"
               :icon="item.icon"
-              to="/"
               :text="item.text"
               @click="moneyitemClick($event, i)"
             />
@@ -27,8 +26,7 @@
                 :key="i"
                 :title="item.title"
                 is-link
-                to="index"
-                @click="configClick($event, i)"
+                @click="configClick(item.routerName, i)"
               />
             </template>
           </van-cell-group>
@@ -36,7 +34,6 @@
         <div class="mt16 mb6">
           <van-button size="large" class="red" tag="div" @click="onLogout">退出账户</van-button>
         </div>
-        <!-- <section-box title="用户信息" class="m10">包括资金、等级、充值、提现、投注记录、消息、设置等</section-box> -->
         <!-- slot -->
         <slot></slot>
       </VScroll>
@@ -64,44 +61,40 @@ export default {
         {
           text: '快捷充值',
           icon: 'cash-back-record',
-          routerPath: ''
+          routerName: ''
         },
         {
           text: '提现',
           icon: 'peer-pay',
-          routerPath: ''
+          routerName: ''
         },
         {
           text: '资金明细',
           icon: 'cash-on-deliver',
-          routerPath: ''
+          routerName: ''
         },
         {
           text: '投注记录',
           icon: 'records',
-          routerPath: ''
+          routerName: ''
         }
       ],
       configList: [
         {
           title: '我的银行卡',
-          routerPath: ''
+          routerName: ''
         },
         {
           title: '消息中心',
-          routerPath: ''
+          routerName: ''
         },
         {
           title: '修改登录密码',
-          routerPath: ''
-        },
-        {
-          title: '修改安全密码',
-          routerPath: ''
+          routerName: 'ChangeLoginPassword'
         },
         {
           title: '安全问题',
-          routerPath: ''
+          routerName: ''
         }
       ]
     }
@@ -148,8 +141,8 @@ export default {
     moneyitemClick(value, i) {
       console.log(i)
     },
-    configClick(value, i) {
-      console.log(this.configList[i].title, i)
+    configClick(routerName, i) {
+      routerName && this.avarouter.go(routerName)
     },
     // 退出
     onLogout() {

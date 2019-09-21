@@ -5,7 +5,7 @@
     :style="[{'backgroundColor': headBjColor} , styles]"
     v-if="!noHeadSub"
   >
-    <span class="for-arrow-handler" @click.stop="goback"></span>
+    <span class="for-arrow-handler" @click.stop="goBack"></span>
     <div class="title">
       <p class="ellipsis">{{ headerTitle }}</p>
       <p v-if="subTitle" class="size12">{{ subTitle }}</p>
@@ -108,7 +108,7 @@ export default {
     }
   },
   methods: {
-    goback() {
+    goBack() {
       if (this.customBack) {
         this.$emit('customBack')
         this.$bus.emit('customBack')

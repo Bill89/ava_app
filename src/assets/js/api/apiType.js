@@ -1,6 +1,7 @@
 export const api = {
   register: 'mycontroller/register', // 注册
   login: 'mycontroller/login', // 登录
+  updatePassword: 'mycontroller/updatePassword', // 修改登录密码
   userInfo: 'mycontroller/userInfo', // 用户信息
   lotteryList: 'lottery/betList', // 彩票列表
   bet: 'lottery/bet' // 彩票下注
