@@ -29,11 +29,7 @@ export default {
   watch: {
     selectedNum: {
       handler(v) {
-        let val = ''
-        for (const value of Object.values(v)) {
-          val += value + ','
-        }
-        this.selectedValues = val
+        this.selectedValues = Object.values(v).join(',')
       },
       deep: true,
       immediate: true
@@ -42,11 +38,11 @@ export default {
   methods: {
     onBuy() {
       const param = {
-        wan: this.selectedNum[0],
-        qian: this.selectedNum[1],
-        bai: this.selectedNum[2],
-        shi: this.selectedNum[3],
-        ge: this.selectedNum[4],
+        wan: this.selectedNum[0].split('').join(','),
+        qian: this.selectedNum[1].split('').join(','),
+        bai: this.selectedNum[2].split('').join(','),
+        shi: this.selectedNum[3].split('').join(','),
+        ge: this.selectedNum[4].split('').join(','),
         bet: '1',
         lotteryId: 1
       }
