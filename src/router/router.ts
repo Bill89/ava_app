@@ -50,20 +50,14 @@ export default new Router({
       path: '/trendChart',
       name: 'TrendChart',
       meta: { name: '欢乐生肖走势图' },
-      component: () => import(/* webpackChunkName: "HappyZodiac" */ '@/pages/game/HappyZodiac/TrendChart')
+      component: () => import(/* webpackChunkName: "TrendChart" */ '@/pages/game/HappyZodiac/TrendChart')
     },
     {
       path: '/happyZodiacRule',
       name: 'HappyZodiacRule',
       meta: { name: '玩法说明' },
-      component: () => import(/* webpackChunkName: "HappyZodiac" */ '@/pages/game/HappyZodiac/HappyZodiacRule')
+      component: () => import(/* webpackChunkName: "HappyZodiacRule" */ '@/pages/game/HappyZodiac/HappyZodiacRule')
     },
-    // {
-    //   path: '/assets',
-    //   name: 'AssetsPage',
-    //   meta: { isNeedLogin: true, name: '资产' },
-    //   component: () => import(/* webpackChunkName: "AssetsPage" */ '@/pages/account/AssetsPage')
-    // },
     {
       path: '*',
       redirect: '/index' // 此重置路由必须在最后一个才有效，勿动
