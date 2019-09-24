@@ -8,7 +8,7 @@ import AvaDialog from './AvaDialog'
 import ChildLayout from '@/layouts/ChildLayout'
 import FixedHead from '@/layouts/FixedHead'
 import FixedFoot from '@/layouts/FixedFoot'
-import { Lazyload, Swipe, SwipeItem, Button, Icon, Search, Progress, Grid, GridItem, Cell, CellGroup, Field } from 'vant'
+import { Lazyload, Swipe, SwipeItem, Button, Icon, Search, Progress, Grid, GridItem, Cell, CellGroup, Field, NavBar, Divider, Overlay } from 'vant'
 
 Vue.use(Lazyload)
 Vue.use(Swipe).use(SwipeItem)
@@ -19,6 +19,9 @@ Vue.use(Progress)
 Vue.use(Grid).use(GridItem)
 Vue.use(Cell).use(CellGroup)
 Vue.use(Field)
+Vue.use(NavBar)
+Vue.use(Divider)
+Vue.use(Overlay)
 
 Vue.prototype.avaDialog = AvaDialog
 

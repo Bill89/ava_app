@@ -1,5 +1,6 @@
 <template>
   <ChildLayout title="欢乐生肖" customScroll class="HappyZodiac">
+    <HappyHeader slot="header"></HappyHeader>
     <header class="f-box bcfff p16 h50">
       <div class="wb50">
         倒计时间
@@ -41,10 +42,12 @@
   </ChildLayout>
 </template>
 <script>
+import HappyHeader from '@/views/game/happyZodiac/HappyHeader'
 import KindFooter from '@/views/game/happyZodiac/KindFooter'
 export default {
   name: 'HappyZodiac',
   components: {
+    HappyHeader,
     KindFooter
   },
   data() {

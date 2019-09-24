@@ -35,16 +35,28 @@ export default new Router({
       component: () => import(/* webpackChunkName: "Login" */ '@/pages/login/Login')
     },
     {
+      path: '/changeLoginPassword',
+      name: 'ChangeLoginPassword',
+      meta: { name: '修改登录密码' },
+      component: () => import(/* webpackChunkName: "ChangeLoginPassword" */ '@/pages/me/ChangeLoginPassword')
+    },
+    {
       path: '/happyZodiac',
       name: 'HappyZodiac',
       meta: { name: '欢乐生肖' },
       component: () => import(/* webpackChunkName: "HappyZodiac" */ '@/pages/game/HappyZodiac')
     },
     {
-      path: '/changeLoginPassword',
-      name: 'ChangeLoginPassword',
-      meta: { name: '修改登录密码' },
-      component: () => import(/* webpackChunkName: "ChangeLoginPassword" */ '@/pages/me/ChangeLoginPassword')
+      path: '/trendChart',
+      name: 'TrendChart',
+      meta: { name: '欢乐生肖走势图' },
+      component: () => import(/* webpackChunkName: "HappyZodiac" */ '@/pages/game/HappyZodiac/TrendChart')
+    },
+    {
+      path: '/happyZodiacRule',
+      name: 'HappyZodiacRule',
+      meta: { name: '玩法说明' },
+      component: () => import(/* webpackChunkName: "HappyZodiac" */ '@/pages/game/HappyZodiac/HappyZodiacRule')
     },
     // {
     //   path: '/assets',

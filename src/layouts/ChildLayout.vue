@@ -2,7 +2,7 @@
   <div class="child-layout absolute-100">
     <slot name="mark"></slot>
     <slot name="header">
-      <fixed-head
+      <!-- <fixed-head
         :headerTitle="title"
         :subTitle="subTitle"
         :rightText="rightText"
@@ -10,7 +10,14 @@
         @triggerHander="clickHeader"
         :noHead="showHead"
         :headBj="bjColor"
-      ></fixed-head>
+      ></fixed-head>-->
+      <van-nav-bar
+        :title="title"
+        :right-text="rightText"
+        left-arrow
+        @click-left="onClickLeft"
+        @click-right="onClickRight"
+      />
     </slot>
     <div
       class="child-main-body"
@@ -162,8 +169,11 @@ export default {
       : `_${Math.random()}`
   },
   methods: {
-    clickHeader(a) {
-      this.$emit('clickHeader', a)
+    onClickLeft() {
+      this.avarouter.goBack()
+    },
+    onClickRight(a) {
+      this.$emit('onClickRight', a)
     },
     clickFooter(a) {
       this.$emit('clickFooter', a)

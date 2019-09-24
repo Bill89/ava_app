@@ -35,3 +35,25 @@
     }
   }
 }
+// 导航栏
+.van-nav-bar {
+  background-color: #256ef6;
+  .van-nav-bar__arrow {
+    height: 1.5rem;
+    width: 1.5rem;
+    background: url(../img/common/icon_back.png) no-repeat center;
+    background-size: cover;
+    &::before {
+      display: none;
+    }
+  }
+  .van-nav-bar__title {
+    color: white;
+  }
+  .van-icon.van-icon-wap-nav {
+    color: white;
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 1.5rem;
+  }
+}
