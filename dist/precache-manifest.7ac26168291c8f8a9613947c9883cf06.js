@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "5759651e427a62ade0cc",
-    "url": "css/app.fd1eaf12.css"
+    "revision": "9291309a9c062745ac34",
+    "url": "css/app.d2380dac.css"
   },
   {
     "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
     "url": "robots.txt"
   },
   {
-    "revision": "5759651e427a62ade0cc",
-    "url": "js/app.81e4b898.js"
+    "revision": "9291309a9c062745ac34",
+    "url": "js/app.be8cfed6.js"
   },
   {
-    "revision": "4c614dbc42c5b9e0a164",
-    "url": "js/HappyZodiac.048a9873.js"
+    "revision": "889d7cdde91060053013",
+    "url": "js/HappyZodiac.0d53fe8b.js"
   },
   {
     "revision": "319e0db7a8974b7e90a8",
@@ -32,23 +32,23 @@ self.__precacheManifest = [
     "url": "js/TrendChart.996cb3f1.js"
   },
   {
-    "revision": "5af40a087f73b9f27a11",
-    "url": "js/index.b7609f4d.js"
+    "revision": "5cbde281481d97ddf368",
+    "url": "js/index.06719c7c.js"
   },
   {
     "revision": "9340c0577bc7bef78913",
     "url": "js/HappyZodiacRule.64e1e4f2.js"
   },
   {
-    "revision": "4701d57c7b5af996907f",
-    "url": "js/chunk-vendors.c188ea67.js"
+    "revision": "f14419289989705b0eed",
+    "url": "js/chunk-vendors.b6fc718b.js"
   },
   {
     "revision": "0e38bbcb6e619abc4844",
     "url": "js/ChangeLoginPassword.65f6525e.js"
   },
   {
-    "revision": "619892435845059ff7d31af6663f755c",
+    "revision": "f5b9982c4ad0dc92d326bc86596c6ffa",
     "url": "index.html"
   },
   {
@@ -56,15 +56,15 @@ self.__precacheManifest = [
     "url": "img/no-signal.1671edb1.png"
   },
   {
-    "revision": "5af40a087f73b9f27a11",
-    "url": "css/index.d1ea1d61.css"
+    "revision": "5cbde281481d97ddf368",
+    "url": "css/index.5f6347b5.css"
   },
   {
-    "revision": "4701d57c7b5af996907f",
-    "url": "css/chunk-vendors.48a03a98.css"
+    "revision": "f14419289989705b0eed",
+    "url": "css/chunk-vendors.ddec918d.css"
   },
   {
-    "revision": "4c614dbc42c5b9e0a164",
-    "url": "css/HappyZodiac.88e29b9b.css"
+    "revision": "889d7cdde91060053013",
+    "url": "css/HappyZodiac.28873c76.css"
   }
 ];

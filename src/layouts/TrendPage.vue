@@ -232,7 +232,7 @@ export default {
 .trend-page {
   .index-h {
     box-sizing: border-box;
-    height: calc(100% - 2.75rem);
+    height: calc(100% - 2.875rem);
   }
 }
 </style>

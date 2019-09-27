@@ -34,6 +34,9 @@
       height: 100%;
     }
   }
+  .van-tabs__line {
+    z-index: unset;
+  }
 }
 // 导航栏
 .van-nav-bar {
@@ -55,5 +58,16 @@
     width: 1.5rem;
     height: 1.5rem;
     font-size: 1.5rem;
+  }
+}
+// 下拉菜单
+.van-dropdown-menu {
+  height: 46px;
+  background-color: #256ef6;
+  .van-dropdown-menu__title .van-ellipsis {
+    color: white;
+  }
+  .van-dropdown-menu__title::after {
+    color: white;
   }
 }

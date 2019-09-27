@@ -166,8 +166,8 @@ export default {
   }
 }
 .fixedhead {
-  height: 2.75rem;
-  line-height: 2.75rem;
+  height: 2.875rem;
+  line-height: 2.875rem;
   box-sizing: border-box;
   font-size: 1.125rem;
   text-align: center;
@@ -192,7 +192,7 @@ export default {
     display: inline-block;
     background: transparent;
     width: 4rem;
-    height: 2.75rem;
+    height: 2.875rem;
   }
   .title {
     > p {
@@ -205,14 +205,14 @@ export default {
     position: absolute;
     right: 0;
     top: 0;
-    line-height: 2.75rem;
-    height: 2.75rem;
+    line-height: 2.875rem;
+    height: 2.875rem;
     font-size: 0.88rem;
     padding-right: 1rem;
     text-align: right;
     .item-icon {
       width: 1.6rem;
-      height: 2.75rem;
+      height: 2.875rem;
       background-repeat: no-repeat;
       background-position: left center;
       background-size: 1.25rem 1.25rem;

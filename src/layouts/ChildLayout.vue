@@ -208,10 +208,10 @@ export default {
     }
     // 原生滚动结束
     &.no-footer {
-      height: calc(100% - 2.75rem);
+      height: calc(100% - 2.875rem);
     }
     &.no-head {
-      height: calc(100% - 2.75rem);
+      height: calc(100% - 2.875rem);
     }
     &.no-head.no-footer {
       height: calc(100%);

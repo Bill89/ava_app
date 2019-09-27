@@ -240,7 +240,7 @@ export default {
 .home-page {
   .index-h {
     box-sizing: border-box;
-    height: calc(100% - 2.75rem - 58px);
+    height: calc(100% - 2.875rem - 58px);
   }
 }
 </style>

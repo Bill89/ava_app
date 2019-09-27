@@ -6,6 +6,15 @@
       @click-left="avarouter.goBack()"
       @click-right="show = !show"
     >
+      <div slot="title">
+        <van-dropdown-menu active-color="#256ef6">
+          <van-dropdown-item v-model="value1" :title="ruleTitle" ref="item">
+            <AvaTabs class="ava-tabs" v-model="active" :titles="titles" animated swipeable>
+              <section slot="slot1"></section>
+            </AvaTabs>
+          </van-dropdown-item>
+        </van-dropdown-menu>
+      </div>
       <van-icon name="wap-nav" slot="right" />
     </van-nav-bar>
     <van-overlay class-name="overlay" :show="show" @click="show = false"></van-overlay>
@@ -24,7 +33,20 @@ export default {
   data() {
     return {
       title: '欢乐生肖',
-      show: false
+      show: false,
+      value1: 0,
+      ruleTitle: '一星定位',
+      active: '一星定位',
+      titles: [
+        { title: '大小单双', value: 0 },
+        { title: '龙虎和', value: 1 },
+        { title: '一星定位', value: 2 },
+        { title: '一星不定位', value: 3 },
+        { title: '二星不定位', value: 4 },
+        { title: '三星不定位', value: 5 },
+        { title: '四星不定位', value: 6 },
+        { title: '五星不定位', value: 7 }
+      ]
     }
   },
   methods: {}
